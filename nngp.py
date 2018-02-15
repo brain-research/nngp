@@ -311,8 +311,8 @@ def _compute_qmap_grid(nonlin_fn,
                        log_spacing=False,
                        min_var=1e-8,
                        max_var=100.,
-                       max_corr=0.999999,
-                       max_gauss=100.):
+                       max_corr=0.99999,
+                       max_gauss=10.):
   """Construct graph for covariance grid to use for kernel computation.
 
   Given variance and correlation (or covariance) of pre-activation, perform

@@ -69,7 +69,7 @@ flags.DEFINE_integer('n_corr', 500,
                      'Number of correlation grid points.')
 flags.DEFINE_integer('max_var', 100,
                      'Max value for variance grid.')
-flags.DEFINE_integer('max_gauss', 100,
+flags.DEFINE_integer('max_gauss', 10,
                      'Range for gaussian integration.')
 
 
