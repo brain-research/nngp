@@ -1,30 +1,38 @@
 # NNGP: Deep Neural Network Kernel for Gaussian Process
 
-TensorFlow open source implementation of 
+TensorFlow open source implementation of
 
 [*Deep Neural Networks as Gaussian Processes*](https://arxiv.org/abs/1711.00165)
 
 by Jaehoon Lee, Yasaman Bahri, Roman Novak, Sam Schoenholz, Jeffrey Pennington,
-Jascha Sohl-dickstein (To appear in ICLR 2018)
+Jascha Sohl-dickstein
+
+(To appear in ICLR 2018)
 
 --
-The code constructs covariance kernel for Gaussian Process that is equivalent to
-infinitely wide, fully connected, deep neural networks. `run_experiments.py`
-uses this kernel to make full Bayesian prediction on MNIST dataset.
+A deep neural network with i.i.d. priors over its parameters is equivalent to a 
+Gaussian process in the limit of infinite network width. The Neural Network
+Gaussian Process (NNGP) is fully described by a covariance kernel determined by 
+corresponding architecture.
+
+This code constructs covariance kernel for the Gaussian process that is equivalent to
+infinitely wide, fully connected, deep neural networks. 
+
+To use the code, run `run_experiments.py`,
+which uses NNGP kernel to make full Bayesian prediction on the MNIST dataset.
 
 --
-Usage:
+Usage :
 
 ```python
 python run_experiments.py \
        --num_train=100 \
-       --num_eval=1000 \
-       --hparams='nonlinearity=relu,depth=10,weight_var=2.0,bias_var=0.2' \
-       --max_gauss=10
+       --num_eval=10000 \
+       --hparams='nonlinearity=relu,depth=100,weight_var=1.79,bias_var=0.83' \
 ```
 
 ## Contact
-***code author:*** Jaehoon Lee, Yasaman Bahri
+***Code author:*** Jaehoon Lee, Yasaman Bahri, Roman Novak
 
 ***Pull requests and issues:*** @jaehlee
 
