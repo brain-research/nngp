@@ -2,14 +2,21 @@
 
 TensorFlow open source implementation of
 
-[*Deep Neural Networks as Gaussian Processes*](https://arxiv.org/abs/1711.00165)
+[**Deep Neural Networks as Gaussian Processes**](https://arxiv.org/abs/1711.00165)
 
-by Jaehoon Lee, Yasaman Bahri, Roman Novak, Sam Schoenholz, Jeffrey Pennington,
+
+by Jaehoon Lee*, Yasaman Bahri*, Roman Novak, Sam Schoenholz, Jeffrey Pennington,
 Jascha Sohl-dickstein
 
-(To appear in ICLR 2018)
+Presented at the International Conference on Learning Representation(ICLR) 2018.
 
---
+## UPDATE (September 2020):
+See also [Neural Tangents: Fast and Easy Infinite Neural Networks in Python](https://arxiv.org/abs/1912.02803) (ICLR 2020)
+available at [github.com/google/neural-tangents](https://github.com/google/neural-tangents) for 
+more up-to-date progress on computing NNGP as well as NT kernels supporting wide variety of architectural components.
+
+
+## Overview
 A deep neural network with i.i.d. priors over its parameters is equivalent to a 
 Gaussian process in the limit of infinite network width. The Neural Network
 Gaussian Process (NNGP) is fully described by a covariance kernel determined by 
@@ -18,11 +25,11 @@ corresponding architecture.
 This code constructs covariance kernel for the Gaussian process that is equivalent to
 infinitely wide, fully connected, deep neural networks. 
 
+## Usage
+
 To use the code, run `run_experiments.py`,
 which uses NNGP kernel to make full Bayesian prediction on the MNIST dataset.
 
---
-Usage :
 
 ```python
 python run_experiments.py \
